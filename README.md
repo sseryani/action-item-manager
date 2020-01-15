@@ -1,53 +1,4 @@
-# team10
-
-
-## How to run the app
-
-### Deployed version
-Visit the [site](https://pacific-atoll-01415.herokuapp.com/) deployed on Heroku.
-
-### Set up on local machine
-
-This project was written using React. To run the app locally, from the root directory, run:
-
-### `cd action-item-manager`
-### `npm install`
-### `npm run build`
-
-to navigate to the action-item-manager directory, install the required packages and build the app, next, run:
-
-### `cd ../login-page`
-### `npm install`
-### `npm run build`
-
-to do the same for the login page, then, run:
-
-### `cd ..`
-### `npm start`
-
-to navigate to the root directory and start the server on [localhost:3001](localhost:3001)
-
-You will also have to initialize a mongo database locally.
-
-## Changes made for phase 2
-
-### Action items
-- Now specifies the team which action items are assigned to
-- Can be deleted by team managers from the action item viewed from the Teams tab
-- Admins/team managers can view the names of team members who have completed an item by clicking
-'Completed by x/y members' on the detailed action item view
-
-### Teams
-- Now organized under teams managed by the user and teams the user is part of as a regular member
-- Managers can no longer remove themselves from the team in Team view
-
-### Admin functionality
-- Admins can no longer remove admins (including themselves)
-- Disbanding a team now deletes all action items associated with that team
-
-### Miscellaneous
-- Forms are now validated (can no longer create a team without a name or no set manager)
-- Signup validation (password must be longer than 4 characters, other fields must be nonempty)
+# Action Item Manager
 
 ## Brief overview
 
@@ -159,129 +110,31 @@ team's manager, which is reflected across the system (in **Teams**).
 Admins are able to invite users to the organization using their email. Admins will be able to specify their role (User or Admin), and their first name and last name.
 Invited users will then be able to login with their email and password 'admin'. Users will be able to change their password using the change password functionality described above.
 
-## Routes
 
-### General
-**/login**
-- type: GET
-- description: Serves the login-page react app
+## How to run the app
 
-**/***
-- type: GET
-- description: Serves the action-item-manager react app
+### Deployed version
+Visit the [site](https://pacific-atoll-01415.herokuapp.com/) deployed on Heroku.
 
-### User
-**/user/login**
-- type: POST
-- description: Allows user to login
+### Set up on local machine
 
-**/user/logout**
-- type: GET
-- description: Allows user to logout and destroys user session
+This project was written using React and Node.js. To run the app locally, from the root directory, run:
 
-**/user/current**
-- type: GET
-- description: Gets the user information tied to the current user session
+### `cd action-item-manager`
+### `npm install`
+### `npm run build`
 
-**/user/create**
-- type: POST
-- description: Creates a new user
+to navigate to the action-item-manager directory, install the required packages and build the app, next, run:
 
-**/user/remove/:id**
-- type: DELETE
-- description: Removes a user from the system given a valid id
+### `cd ../login-page`
+### `npm install`
+### `npm run build`
 
-**/user/:id**
-- type: GET
-- description: Gets a users information based on a valid user id
+to do the same for the login page, then, run:
 
-**/user/:id**
-- type: POST
-- description: Updates a users information based on a valid user id
+### `cd ..`
+### `npm start`
 
-**/user/changePassword/:id**
-- type: PATCH
-- description: Updates a users password given a vaid user id
+to navigate to the root directory and start the server on [localhost:3001](localhost:3001)
 
-**/user/isOnTeam**
-- type: GET
-- description: Checks if the user is on a team given a valid user id and team id
-
-**/user/addToTeam**
-- type: POST
-- description: Add a user to a team
-
-**/user/removeFromTeam**
-- type: POST
-- description: Removes a user from a team
-
-### Team
-**/team**
-- type: GET
-- description: Get list of all teams in the system
-
-**/team/:id**
-- type: GET
-- description: Get information about a team given a valid team id
-
-**/team/size/:id**
-- type: GET
-- description: Get the size of a team given a valid team id
-
-**/team/users/:id**
-- type: GET
-- description: Get list of users on a team given a valid team id
-
-**/team/teamsFromList**
-- type: POST
-- description: Get information about teams given a list of team ids
-
-**/team/setManager/:id**
-- type: PATCH
-- description: Set the manager for a team given a valid user id and team id
-
-**/team/create**
-- type: POST
-- description: Create a new team in the system
-
-**/team/:id**
-- type: DELETE
-- description: Remove a team from the system given a valid team id
-
-### ActionItem
-**/action-item/create**
-- type: POST
-- description: Create a new action item in the system
-
-**action-item/:id**
-- type: GET
-- description: Get information about an action item given a valid action item id
-
-**/action-item/:id**
-- type: PATCH
-- description: Update information about an action item given a valid action item id
-
-**/action-item/:id**
-- type: DELETE
-- description: Remove an action item from the system given a valid action item id
-
-**/action-item/team/:id**
-- type: GET
-- description: Get list of action items for a team given a valid team id
-
-**/action-item/usersCompleted/:id**
-- type: GET
-- description: Get information about the users who have completed an action item given a valid action item id
-
-**/action-item/usersCompleted/:id/:user_id**
-- type: GET
-- description: Get whether the user with user_id has completed action item with id
-
-**/action-item/current**
-- type: POST
-- description: Get list of action items for the current user
-
-**/action-item/complete/:id**
-- type: POST
-- description: Toggle the status of an action item from complete to incomplete, or vice versa
-
+You will also have to initialize a mongo database locally.
