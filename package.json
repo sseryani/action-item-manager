@@ -22,8 +22,8 @@
   "homepage": "https://github.com/csc309-fall-2019/team10#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "express-session": "^1.17.0",
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.11",
